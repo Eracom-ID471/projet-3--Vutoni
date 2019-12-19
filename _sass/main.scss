@@ -6,4 +6,16 @@ body {
   background: $backgroundColor;
   color: $bodyColor;
   font-family: $bodyFont;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+
+.blog-header {
+  font-size: 100%;
+}
+
+.carousel1 img {
+  width: 500px;
+  height: 267;
 }
