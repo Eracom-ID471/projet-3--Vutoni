@@ -6,6 +6,7 @@ body {
   background: $backgroundColor;
   color: $bodyColor;
   font-family: $bodyFont;
+
   margin-left: 10%;
   margin-right: 10%;
 }
@@ -23,7 +24,25 @@ body {
 .carousel1 a {
   text-decoration: none;
 }
+.word {
+  animation: word 10s infinite;
+}
+@keyframes word {
+  0%   { -moz-transform: translateX(100%); }
+  100% { -moz-transform: translateX(-100%); }
+ }
 
-// .push{
-//   padding-right: 2%;
-// }
+  h5 {
+  font-size: 20px;
+}
+
+.lien p {
+  font-size: 12px;
+}
+
+.cardy {
+  padding-top: 3%;
+}
+.kosmic{
+  padding-top: 11%;
+}
