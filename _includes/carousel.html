@@ -4,19 +4,37 @@
     <div class="row">
       <div class="col-6">
         <div class="carousel-inner">
-          {% for post in site.posts %}
-          {% if forloop.first %}
-            <div class="carousel-item active">
-          {% else %}
-            <div class="carousel-item">
-          {% endif %}
-            <img src="{{ post.image | relative_url }}" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-
-              <a class="blog-header-logo" href="{{ post.url | relative_url }}">{{ post.titre }}</a>
+          {% if page.categorie %}
+            {% assign posts_categorize = site.posts | where: "categorie", page.categorie %}
+            {% for post in posts_categorize %}
+            {% if forloop.first %}
+              <div class="carousel-item active">
+            {% else %}
+              <div class="carousel-item">
+            {% endif %}
+              <img src="{{ post.image | relative_url }}" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <a class="blog-header-logo" href="{{ post.url | relative_url }}">{{ post.titre }}</a>
+              </div>
             </div>
-          </div>
+            {% endfor %}
+          {% else %}
+            {% for post in site.posts %}
+            {% if forloop.first %}
+              <div class="carousel-item active">
+            {% else %}
+              <div class="carousel-item">
+            {% endif %}
+              <img src="{{ post.image | relative_url }}" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <a class="blog-header-logo" href="{{ post.url | relative_url }}">{{ post.titre }}</a>
+              </div>
+            </div>
           {% endfor %}
+          {% endif %}
+
+          {% if page.categorie == "session" %}
+          {% endif %}
 
         </div>
         <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
